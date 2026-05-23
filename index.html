@@ -1,102 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Dinesh Venkatagiri | Portfolio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
-      background:#f5f7fa;
-      color:#222;
-      line-height:1.6;
+    html {
+      scroll-behavior: smooth;
     }
 
-    header{
-      background:#0f172a;
-      color:white;
-      padding:60px 20px;
-      text-align:center;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6f8;
+      color: #1e293b;
+      line-height: 1.6;
     }
 
-    header h1{
-      font-size:42px;
-      margin-bottom:10px;
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
     }
 
-    header p{
-      font-size:18px;
-      color:#cbd5e1;
+    /* NAVBAR */
+
+    nav {
+      width: 100%;
+      background: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e2e8f0;
     }
 
-    .container{
-      width:90%;
-      max-width:1000px;
-      margin:auto;
-      padding:40px 0;
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    section{
-      margin-bottom:50px;
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b;
     }
 
-    h2{
-      margin-bottom:20px;
-      color:#0f172a;
-      border-bottom:2px solid #2563eb;
-      display:inline-block;
-      padding-bottom:5px;
+    .nav-links {
+      display: flex;
+      gap: 30px;
     }
 
-    .card{
-      background:white;
-      padding:20px;
-      border-radius:10px;
-      margin-bottom:20px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    .nav-links a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      transition: 0.3s;
     }
 
-    ul{
-      padding-left:20px;
+    .nav-links a:hover {
+      color: #2563eb;
     }
 
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    /* HERO SECTION */
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
     }
 
-    .skill{
-      background:#2563eb;
-      color:white;
-      padding:10px 15px;
-      border-radius:5px;
-      font-size:14px;
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 70px;
+      flex-wrap: wrap;
     }
 
-    a{
-      color:#2563eb;
-      text-decoration:none;
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
     }
 
-    footer{
-      text-align:center;
-      padding:20px;
-      background:#0f172a;
-      color:white;
-      margin-top:30px;
+    .hero-text h1 {
+      font-size: 52px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0f172a;
     }
 
-    @media(max-width:768px){
-      header h1{
-        font-size:32px;
+    .hero-text h3 {
+      font-size: 22px;
+      color: #3b82f6;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 17px;
+      color: #475569;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #1e293b;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #334155;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 280px;
+    }
+
+    .hero-image img {
+      width: 320px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 35px;
+      color: #0f172a;
+    }
+
+    /* CARD */
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    /* SKILLS */
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      background: white;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      transition: 0.3s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 15px;
+      color: #0f172a;
+    }
+
+    .project-card p {
+      color: #475569;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    /* EDUCATION */
+
+    .education-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .education-card p {
+      color: #475569;
+    }
+
+    /* CONTACT */
+
+    .contact-info p {
+      margin-bottom: 14px;
+      color: #475569;
+    }
+
+    .contact-info a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      margin-top: 40px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 900px) {
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .hero-text p {
+        margin: auto;
+        margin-bottom: 30px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      .hero-text h3 {
+        font-size: 18px;
+      }
+
+      .hero-image img {
+        width: 260px;
+      }
+
+      .section-title {
+        font-size: 28px;
       }
     }
   </style>
@@ -104,100 +337,211 @@
 
 <body>
 
-  <header>
-    <h1>Venkatagiri Kanipakam Dinesh</h1>
-    <p>Data Analytics Enthusiast | AI & Data Science Graduate</p>
-  </header>
+  <!-- NAVBAR -->
 
-  <div class="container">
+  <nav>
+    <div class="container nav-container">
 
-    <section>
-      <h2>About Me</h2>
+      <div class="logo">
+        Dinesh VK
+      </div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <h1>Venkatagiri Kanipakam Dinesh</h1>
+
+        <h3>Data Analytics Enthusiast</h3>
+
+        <p>
+          B.Tech graduate specialized in Artificial Intelligence & Data Science
+          with strong interest in Data Analytics, Business Intelligence,
+          dashboard development, and data-driven decision making.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="VK DINESH RESUME.pdf" target="_blank" class="btn btn-primary">
+            View Resume
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="profile.png" alt="Dinesh Profile">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
 
       <div class="card">
+
         <p>
-I am a B.Tech graduate in Computer Science Engineering with specialization in Artificial Intelligence & Data Science. I am passionate about Data Analytics, Business Intelligence, and building real-world projects using Python, SQL, Excel, and Power BI.
+          I am a B.Tech graduate in Computer Science Engineering with specialization
+          in Artificial Intelligence & Data Science. I am passionate about
+          Data Analytics, Business Intelligence, and building real-world projects
+          using Python, SQL, Excel, and Power BI.
         </p>
+
       </div>
-    </section>
 
-    <section>
-      <h2>Skills</h2>
+    </div>
 
-      <div class="skills">
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-container">
+
         <div class="skill">Python</div>
         <div class="skill">Power BI</div>
         <div class="skill">Excel</div>
         <div class="skill">MySQL</div>
         <div class="skill">EDA</div>
         <div class="skill">Data Visualization</div>
+
       </div>
-    </section>
 
-    <section>
-  <h2>Projects</h2>
+    </div>
 
-  <div class="card">
-    <h3>Sales Performance Analysis Dashboard</h3>
+  </section>
 
-    <p>
-      Developed an interactive Power BI dashboard to analyze
-      sales trends, category-wise sales, and regional performance.
-    </p>
+  <!-- PROJECTS -->
 
-    <br>
+  <section id="projects">
 
-    <a href="https://github.com/VK-Dinesh/Sales-Performance-Analysis-Dashboard" target="_blank">
-      View Project
-    </a>
-  </div>
+    <div class="container">
 
-  <div class="card">
-    <h3>E-Commerce Sales Analysis</h3>
+      <h2 class="section-title">Projects</h2>
 
-    <p>
-      Performed sales and profit analysis using SQL and Power BI
-      to generate business insights.
-    </p>
+      <div class="projects-grid">
 
-    <br>
+        <div class="project-card">
 
-    <a href="https://github.com/VK-Dinesh/Ecommerce-Sales-Analysis" target="_blank">
-      View Project
-    </a>
-  </div>
+          <h3>Sales Performance Analysis Dashboard</h3>
 
-  <div class="card">
-    <h3>Netflix Data Analysis</h3>
+          <p>
+            Developed an interactive Power BI dashboard to analyze
+            sales trends, category-wise sales, and regional performance.
+          </p>
 
-    <p>
-      Conducted exploratory data analysis on Netflix datasets
-      using Python and visualization libraries.
-    </p>
+          <a href="https://github.com/VK-Dinesh/Sales-Performance-Analysis-Dashboard" target="_blank">
+            View Project
+          </a>
 
-    <br>
+        </div>
 
-    <a href="https://github.com/VK-Dinesh/Netflix-Data-Analysis" target="_blank">
-      View Project
-    </a>
-  </div>
+        <div class="project-card">
 
-</section>
-    <section>
-      <h2>Education</h2>
+          <h3>E-Commerce Sales Analysis</h3>
 
-      <div class="card">
-        <h3>B.Tech - CSE (AI & DS)</h3>
+          <p>
+            Performed sales and profit analysis using SQL and Power BI
+            to generate business insights.
+          </p>
+
+          <a href="https://github.com/VK-Dinesh/Ecommerce-Sales-Analysis" target="_blank">
+            View Project
+          </a>
+
+        </div>
+
+        <div class="project-card">
+
+          <h3>Netflix Data Analysis</h3>
+
+          <p>
+            Conducted exploratory data analysis on Netflix datasets
+            using Python and visualization libraries.
+          </p>
+
+          <a href="https://github.com/VK-Dinesh/Netflix-Data-Analysis" target="_blank">
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <h2 class="section-title">Education</h2>
+
+      <div class="card education-card">
+
+        <h3>B.Tech - Computer Science Engineering (AI & DS)</h3>
+
         <p>Siddharth Institute of Engineering & Technology</p>
+
         <p>CGPA: 8.6</p>
+
       </div>
-    </section>
 
-    <section>
-      <h2>Contact</h2>
+    </div>
 
-      <div class="card">
-        <p>Email: vkdinesh033@gmail.com</p>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <h2 class="section-title">Contact</h2>
+
+      <div class="card contact-info">
+
+        <p>
+          Email:
+          <a href="mailto:vkdinesh033@gmail.com">
+            vkdinesh033@gmail.com
+          </a>
+        </p>
 
         <p>
           LinkedIn:
@@ -212,14 +556,19 @@ I am a B.Tech graduate in Computer Science Engineering with specialization in Ar
             github.com/VK-Dinesh
           </a>
         </p>
-      </div>
-    </section>
 
-  </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    <p>© 2026 Venkatagiri Kanipakam Dinesh</p>
+    © 2026 Venkatagiri Kanipakam Dinesh
   </footer>
 
 </body>
+
 </html>
